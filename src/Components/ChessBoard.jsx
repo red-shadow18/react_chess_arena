@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import BoardSetup from "./BoardSetup";
 import styled from "@emotion/styled";
 import BoardSetupBackground from "../asset/images/Background/BoardSetupBg.png";
-import Heading from "./Heading";
 
 const ChessboardWrapper=styled.div`
 display:flex;
