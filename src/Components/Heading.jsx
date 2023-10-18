@@ -28,7 +28,7 @@ const Heading=styled.p`
 
 font-size: ${props=>props.type ? headingStyleMap[props.type]["fontSize"] : "1rem"};
 font-weight: bold;
-color: ${props=>props.color ? headingStyleMap[props.color] : "black"};
+color: ${props=>props.color ? props.color : "black"};
 text-align: ${props=> props.textAlign || "left"};
 `
 

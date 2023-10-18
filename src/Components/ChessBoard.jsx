@@ -1,12 +1,14 @@
-import React,{useState} from "react";
+import React from "react";
 import BoardSetup from "./BoardSetup";
+import GamePlay from "./GamePlay";
 import styled from "@emotion/styled";
 import BoardSetupBackground from "../asset/images/Background/BoardSetupBg.png";
+import {useSelector } from "react-redux";
 
-const ChessboardWrapper=styled.div`
+const ChessGameWrapper=styled.div`
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
 height:100vh;
 
 &:before{
@@ -19,7 +21,6 @@ height:100vh;
     position:absolute;
     z-index:-2;
     opacity:.75;
-
 }
 
     
@@ -30,22 +31,23 @@ height:100vh;
 // const tokenTypes=[1,2,3]
 
 const ChessBoard=()=>{
-    const [currentState, setCurrentState]=useState("gameSetup")
+    const currentGameState=useSelector(state=>state.currentGameState)
 
     const states={
-        "gameSetup":<BoardSetup currentState={currentState}/>,
-        "gamePlay":"",
+        "gameSetup":<BoardSetup/>,
+        "gamePlay":<GamePlay/>,
         "gameReport":""
     }
 
+
     
     return (
-        <ChessboardWrapper>
+        <ChessGameWrapper>
             {
-                states[currentState]
+                states[currentGameState]
             }
          
-        </ChessboardWrapper>
+        </ChessGameWrapper>
     )
 }
 

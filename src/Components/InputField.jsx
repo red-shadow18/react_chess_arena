@@ -10,12 +10,12 @@ const TextFieldWrapper=styled.div`
         height:25px;
         width:100%;
         border:none;
-        border-bottom: 1px solid brown;
+        border-bottom: 1px solid  ${props=>props?.borderColor||"brown"};
         background: transparent;
         outline:none;
 
         &:focus~label, &:valid~label{
-            bottom:22px
+            bottom:25px
         }
     }
     .label {
@@ -32,14 +32,14 @@ const TextFieldWrapper=styled.div`
 
 `
 
-export default function TextField({value="",label="", onChange, playerNumber, className, width}){
+export default function TextField({value="",label="", onChange, playerNumber, className, width, borderColor}){
 
     const handleInputValueChange=(e)=>{
         const {value,id}=e.target
         onChange(value,id)
     }
 return (
-    <TextFieldWrapper width={width} className={className}>
+    <TextFieldWrapper width={width} className={className} borderColor={borderColor}>
         <input className="inputField" value={value} onChange={handleInputValueChange} id={playerNumber} required/>
         <label className="label">{label}<sup>*</sup></label>
     </TextFieldWrapper>
