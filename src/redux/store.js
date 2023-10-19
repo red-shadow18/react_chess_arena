@@ -7,7 +7,8 @@ const initialState={
     player1Name:"Player1",
     player1AvatarId:"avatar-id-player1-1",
     player2Name:"Player2",
-    player2AvatarId:"avatar-id-player2-6"
+    player2AvatarId:"avatar-id-player2-6",
+    bgImageLoading:true
 }
 
 export const store = createStore(reducer,initialState,enhancer)

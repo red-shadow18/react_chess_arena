@@ -9,6 +9,8 @@ export const reducer=(state,action)=>{
         return {...state, player2Name:action.payload}
     }else if (action.type==="CHANGEPLAYER2AVATARID"){
         return {...state, player2AvatarId:action.payload}
+    }else if (action.type==="CHANGEBACKGROUNDIMAGELOADINGSTATUS"){
+        return {...state, bgImageLoading:action.payload}
     }
 
     return state;

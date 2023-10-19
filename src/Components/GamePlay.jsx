@@ -3,7 +3,16 @@ import styled from "@emotion/styled";
 
 
 const allChessSquares=[]
-//const horizontalAxis=["A","B","C","D","E","F","G","H"]
+const numberToAlbhapetMap={
+    1:"A",
+    2:"B",
+    3:"C",
+    4:"D",
+    5:"E",
+    6:"F",
+    7:"G",
+    8:"H",
+}
 const horizontalAxis=[1,2,3,4,5,6,7,8]
 const verticalAxis=[8,7,6,5,4,3,2,1]
 const chessSquaresCreater=()=>{
