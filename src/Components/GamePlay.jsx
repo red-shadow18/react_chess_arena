@@ -47,6 +47,8 @@ const GamePlay=()=>{
     )
 }
 
+const potrait=window.innerHeight>window.innerWidth
+
 const ChessBoardWrapper=styled.div`
     display:flex;
     justify-content: center;
@@ -56,8 +58,8 @@ const ChessBoardWrapper=styled.div`
     box-sizing:border-box;
 
     .squareBoard {
-        height:80vh;
-        width:80vh;
+        height:${potrait? "80vw" : "80vh"};
+        width:${potrait? "80vw" : "80vh"};
         border:0.5px solid red;
         display:flex;
         flex-wrap: wrap;
